@@ -52,7 +52,7 @@ class FragmentCrearAlumne : Fragment() {
         }
         val buttonObrirLlista = view.findViewById<Button>(R.id.buttonObrirLlista)
         buttonObrirLlista.setOnClickListener{
-            
+
             view.findNavController().navigate(R.id.action_fragmentCrearAlumne_to_fragmentLlista)
         }
 
