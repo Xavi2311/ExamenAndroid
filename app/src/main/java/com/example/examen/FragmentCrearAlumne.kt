@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,10 +35,21 @@ class FragmentCrearAlumne : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_crear_alumne, container, false)
+        val botonAfegir = view.findViewById<Button>(R.id.buttonAfegir)
+
+        botonAfegir.setOnClickListener{
+            System.out.println("funciona")
+        }
+
         return inflater.inflate(R.layout.fragment_crear_alumne, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val model = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
