@@ -24,7 +24,7 @@ class SharedViewModel : ViewModel() {
             alumne.value = alumno
         }
 
-        fun getPetById(): LiveData<Alumne?>? {
+        fun getAlumneById(): LiveData<Alumne?>? {
             return alumne
         }
     }

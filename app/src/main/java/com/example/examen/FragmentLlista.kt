@@ -12,6 +12,9 @@ class FragmentLlista : Fragment() {
     companion object {
         fun newInstance() = FragmentLlista()
     }
+    private val mAdapter by lazy {
+
+    }
 
     private lateinit var viewModel: FragmentLlistaViewModel
 
