@@ -12,6 +12,6 @@
             android:id="@+id/textView"
             android:layout_width="302dp"
             android:layout_height="223dp"
-            android:text="@string/element_text" />
+            android:text="a" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

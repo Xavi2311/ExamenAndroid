@@ -3,11 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragmentLlista">
+    app:startDestination="@id/fragmentAfegir2">
 
     <fragment
         android:id="@+id/fragmentLlista"
         android:name="com.example.examen.FragmentLlista"
         android:label="fragment_fragment_llista"
-        tools:layout="@layout/fragment_fragment_llista" />
+        tools:layout="@layout/fragment_fragment_llista" >
+        <action
+            android:id="@+id/action_fragmentLlista_to_fragmentCrearAlumne"
+            app:destination="@id/fragmentCrearAlumne" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAfegir2"
+        android:name="com.example.examen.FragmentAfegir"
+        android:label="fragment_entrar"
+        tools:layout="@layout/fragment_entrar" >
+        <action
+            android:id="@+id/action_fragmentAfegir2_to_fragmentCrearAlumne"
+            app:destination="@id/fragmentCrearAlumne"
+            app:popUpTo="@id/fragmentCrearAlumne" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCrearAlumne"
+        android:name="com.example.examen.FragmentCrearAlumne"
+        android:label="fragment_crear_alumne"
+        tools:layout="@layout/fragment_crear_alumne" >
+        <action
+            android:id="@+id/action_fragmentCrearAlumne_to_fragmentLlista"
+            app:destination="@id/fragmentLlista" />
+    </fragment>
 </navigation>

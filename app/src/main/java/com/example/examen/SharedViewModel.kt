@@ -13,12 +13,7 @@ class SharedViewModel : ViewModel() {
         val edat = MutableLiveData<String>()
         val alumne = MutableLiveData<Alumne>()
 
-        fun guardarNombre(text: String) {
-            nom.value = text
-        }
-        fun guardarEdad(text: String) {
-            nom.value = text
-        }
+        
 
         fun guardarAlumno(alumno: Alumne){
             alumne.value = alumno

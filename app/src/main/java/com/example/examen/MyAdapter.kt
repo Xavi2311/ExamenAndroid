@@ -16,7 +16,7 @@ class MyAdapter (private val mDataSet: List<Alumne>) : RecyclerView.Adapter<MyVi
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.frame_layout, parent, false) as TextView
 
-        return ViewHolder(v)
+        return MyViewHolder(v)
     }
 
     override fun getItemCount() = mDataSet.size
