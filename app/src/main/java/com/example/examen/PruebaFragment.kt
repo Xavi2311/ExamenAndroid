@@ -1,14 +1,10 @@
 package com.example.examen
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragmentAfegir.newInstance] factory method to
+ * Use the [PruebaFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentAfegir : Fragment() {
+class PruebaFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,14 +34,7 @@ class FragmentAfegir : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_entrar, container, false)
-        var buttonEntrar = view.findViewById<Button>(R.id.buttonEntrar)
-        buttonEntrar.setOnClickListener{
-
-            view.findNavController().navigate(R.id.action_fragmentAfegir2_to_fragmentCrearAlumne)
-        }
-
-        return view
+        return inflater.inflate(R.layout.fragment_prueba, container, false)
     }
 
     companion object {
@@ -55,12 +44,12 @@ class FragmentAfegir : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentAfegir.
+         * @return A new instance of fragment PruebaFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragmentAfegir().apply {
+            PruebaFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.example.examen.R.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,19 +38,30 @@ class FragmentCrearAlumne : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_crear_alumne, container, false)
+        val view = inflater.inflate(layout.fragment_crear_alumne, container, false)
         val botonAfegir = view.findViewById<Button>(R.id.buttonAfegir)
+        val model = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
         botonAfegir.setOnClickListener{
-            System.out.println("funciona")
+            var textoAlumno = view.findViewById<TextView>(R.id.nomAlumne)
+            var edatAlumno = view.findViewById<TextView>(R.id.editTextTextPersonName5)
+            var cpAlumno = view.findViewById<TextView>(R.id.editTextTextPostalAddress)
+            var informeAlumno = view.findViewById<TextView>(R.id.editTextTextPersonName2)
+            var alumno: Alumne=Alumne(textoAlumno.text.toString(),edatAlumno.text.toString(),cpAlumno.text.toString(),informeAlumno.text.toString())
+            model.guardarAlumno(alumno)
+        }
+        val buttonObrirLlista = view.findViewById<Button>(R.id.buttonObrirLlista)
+        buttonObrirLlista.setOnClickListener{
+            
+            view.findNavController().navigate(R.id.action_fragmentCrearAlumne_to_fragmentLlista)
         }
 
-        return inflater.inflate(R.layout.fragment_crear_alumne, container, false)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val model = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+
 
     }
     companion object {

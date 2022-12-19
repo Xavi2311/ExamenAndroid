@@ -21,8 +21,10 @@
         tools:layout="@layout/fragment_entrar" >
         <action
             android:id="@+id/action_fragmentAfegir2_to_fragmentCrearAlumne"
-            app:destination="@id/fragmentCrearAlumne"
-            app:popUpTo="@id/fragmentCrearAlumne" />
+            app:destination="@id/fragmentCrearAlumne" />
+        <action
+            android:id="@+id/action_fragmentAfegir2_to_pruebaFragment"
+            app:destination="@id/pruebaFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCrearAlumne"
@@ -33,4 +35,9 @@
             android:id="@+id/action_fragmentCrearAlumne_to_fragmentLlista"
             app:destination="@id/fragmentLlista" />
     </fragment>
+    <fragment
+        android:id="@+id/pruebaFragment"
+        android:name="com.example.examen.PruebaFragment"
+        android:label="fragment_prueba"
+        tools:layout="@layout/fragment_prueba" />
 </navigation>
